@@ -1,3 +1,5 @@
+import math
+
 # Points contain x- and y-coordinate
 # Instantiated by Point(x, y)
 class Point:
@@ -37,8 +39,33 @@ def input_Circle():
     r = input("Input the radius\n")
     return Circle(center, float(r))
 
+def distance(point1, point2):
+  return ((point1.x - point2.x)**2 + (point1.y - point2.y)**2) ** 0.5
+
+def slope(point1, point2):
+  return (point1.y - point2.y) / (point1.x - point2.x)
+
+def circumference(circle):
+  return math.pi * circle.r * 2
+
+def area(circle):
+  return math.pi * circle.r ** 2
+
+def in_circle(point, circle):
+  return distance(point, circle.center) <= circle.r
+
+print("For Point 1:")
 p1 = input_Point()
+print("For Point 2:")
+p2 = input_Point()
 c1 = input_Circle()
 
 print(p1)
+print(p2)
 print(c1)
+
+# print(distance(p1, p2))
+# print(slope(p1, p2))
+# print(circumference(c1))
+# print(area(c1))
+print(in_circle(p1, c1))
