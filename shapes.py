@@ -54,18 +54,26 @@ def area(circle):
 def in_circle(point, circle):
   return distance(point, circle.center) <= circle.r
 
+# Bonus
+def collinear(point1, point2, point3):
+  return slope(point1, point2) == slope(point2, point3)
+
 print("For Point 1:")
 p1 = input_Point()
 print("For Point 2:")
 p2 = input_Point()
+# print("For Point 3:")
+# p3 = input_Point()
 c1 = input_Circle()
 
 print(p1)
 print(p2)
+# print(p3)
 print(c1)
 
 # print(distance(p1, p2))
 # print(slope(p1, p2))
 # print(circumference(c1))
 # print(area(c1))
-print(in_circle(p1, c1))
+# print(in_circle(p1, c1))
+# print(collinear(p1, p2, p3))
